@@ -16,14 +16,14 @@ export function SignupPage() {
 
       <s.ContainerForm>
         <s.Form action="#">
-          <s.InputText type="text" placeholder="Apelido" value="" />
-          <s.InputText type="email" placeholder="E-mail" value="" />
-          <s.InputText type="text" placeholder="Senha" value="" />
+          <s.InputText type="text" placeholder="Apelido" />
+          <s.InputText type="email" placeholder="E-mail" />
+          <s.InputText type="text" placeholder="Senha" />
          
           <s.ContainerTermContract>
             <s.TextContract>
-              Ao continuar, você concorda com o nosso{" "}
-              <a href="#">Contrado de usuário</a> e nossa{" "}
+              Ao continuar, você concorda com o nosso
+              <a href="#">Contrado de usuário</a> e nossa
               <a href="#">Política de Privacidade</a>
             </s.TextContract>
 

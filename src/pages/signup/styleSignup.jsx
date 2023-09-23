@@ -5,13 +5,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 1rem;
 `;
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
   position: relative;
+  width: 100%;
 `;
 export const ContainerLogo = styled.div`
   display: flex;
@@ -50,9 +53,10 @@ export const Form = styled.form`
   gap: .5rem;
   flex-direction: column;
   font-family: "Noto Sans", sans-serif;
+  width: 360px;
+  padding: 0 .5rem;
 `
 export const InputText = styled.input`
-  width: 363px;
   height: 60px;
   padding-left: 17px;
   color: #323941;
