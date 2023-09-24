@@ -1,18 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/header/Header";
 import * as s from "./styleSignup";
+import { goToPosts } from "../../routes/coordinator";
 
 export function SignupPage() {
+
+  const navigate = useNavigate()
+
   return (
     <s.Container>
-      <s.Header>
-        <s.ContainerLogo>
-          <s.ImgLogo
-            src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
-            alt="logo-labeddit"
-          />
-          <s.SubTitle>Entrar</s.SubTitle>
-        </s.ContainerLogo>
-        <s.Title>Olá, boas vindas ao LabEddit ;)</s.Title>
-      </s.Header>
+      <Header/>
+      <s.Title>Olá, boas vindas ao LabEddit ;)</s.Title>
 
       <s.ContainerForm>
         <s.Form action="#">
@@ -22,9 +20,7 @@ export function SignupPage() {
          
           <s.ContainerTermContract>
             <s.TextContract>
-              Ao continuar, você concorda com o nosso
-              <a href="#">Contrado de usuário</a> e nossa
-              <a href="#">Política de Privacidade</a>
+              Ao continuar, você concorda com o nosso <a href="#">Contrado de usuário</a> e nossa  <a href="#">Política de Privacidade</a>
             </s.TextContract>
 
             <s.InputCheck>
@@ -35,7 +31,7 @@ export function SignupPage() {
             </s.InputCheck>
           </s.ContainerTermContract>
 
-          <s.BtnRegister type="button" value="Cadastar" />
+          <s.BtnRegister type="button" value="Cadastar" onClick={() => goToPosts(navigate)} />
         </s.Form>
       </s.ContainerForm>
     </s.Container>
