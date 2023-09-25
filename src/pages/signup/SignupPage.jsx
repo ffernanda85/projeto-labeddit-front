@@ -14,9 +14,9 @@ export function SignupPage() {
 
       <s.ContainerForm>
         <s.Form action="#">
-          <s.InputText type="text" placeholder="Apelido" />
-          <s.InputText type="email" placeholder="E-mail" />
-          <s.InputText type="text" placeholder="Senha" />
+          <s.InputText type="text" placeholder="Apelido" required/>
+          <s.InputText type="email" placeholder="E-mail" required/>
+          <s.InputText type="text" placeholder="Senha" required/>
          
           <s.ContainerTermContract>
             <s.TextContract>
