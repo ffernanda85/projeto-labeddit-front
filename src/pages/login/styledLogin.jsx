@@ -4,7 +4,7 @@ export const Container = styled.div`
     height: 100vh;
     width: 100%;
 `
-export const Header = styled.header`
+export const HeaderLogin = styled.header`
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -60,6 +60,7 @@ export const BtnInput = styled.input`
     font-weight: 700;
     font-size: 1.125rem;
     margin-top: 2.5rem;
+    cursor: pointer;
 `
 export const BtnToGoToSignup = styled.button`
     font-family: 'Noto Sans', sans-serif;
@@ -71,4 +72,5 @@ export const BtnToGoToSignup = styled.button`
     border: 1px solid #FE7E02;
     color: #FE7E02;
     background-color: #fff;
+    cursor: pointer;
 `

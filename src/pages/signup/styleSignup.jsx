@@ -8,35 +8,6 @@ export const Container = styled.div`
   align-items: center;
   padding-bottom: 1rem;
 `;
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-  width: 100%;
-`;
-export const ContainerLogo = styled.div`
-  display: flex;
-  align-items: center;
-  background-color: #ededed;
-  width: 100%;
-  height: 50px;
-`;
-export const ImgLogo = styled.img`
-  width: 28.02px;
-  height: 28.64px;
-  position: absolute;
-  left: 49%;
-`;
-export const SubTitle = styled.p`
-  color: #4088cb;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 600;
-  font-size: 1.125rem;
-  position: absolute;
-  right: 5%;
-`;
 export const Title = styled.h1`
   color: #373737;
   font-family: "IBM Plex Sans", sans-serif;
@@ -91,4 +62,5 @@ export const BtnRegister = styled.input`
   font-weight: 700;
   color: #fff;
   background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+  cursor: pointer;
 `

@@ -1,41 +1,38 @@
+import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/header/Header";
 import * as s from "./styleSignup";
+import { goToPosts } from "../../routes/coordinator";
 
 export function SignupPage() {
+
+  const navigate = useNavigate()
+  
+
   return (
     <s.Container>
-      <s.Header>
-        <s.ContainerLogo>
-          <s.ImgLogo
-            src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
-            alt="logo-labeddit"
-          />
-          <s.SubTitle>Entrar</s.SubTitle>
-        </s.ContainerLogo>
-        <s.Title>Olá, boas vindas ao LabEddit ;)</s.Title>
-      </s.Header>
+      <Header/>
+      <s.Title>Olá, boas vindas ao LabEddit ;)</s.Title>
 
       <s.ContainerForm>
         <s.Form action="#">
-          <s.InputText type="text" placeholder="Apelido" />
-          <s.InputText type="email" placeholder="E-mail" />
-          <s.InputText type="text" placeholder="Senha" />
+          <s.InputText type="text" placeholder="Apelido" required/>
+          <s.InputText type="email" placeholder="E-mail" required/>
+          <s.InputText type="text" placeholder="Senha" required/>
          
           <s.ContainerTermContract>
             <s.TextContract>
-              Ao continuar, você concorda com o nosso
-              <a href="#">Contrado de usuário</a> e nossa
-              <a href="#">Política de Privacidade</a>
+              Ao continuar, você concorda com o nosso <a href="#">Contrado de usuário</a> e nossa  <a href="#">Política de Privacidade</a>
             </s.TextContract>
 
             <s.InputCheck>
-              <input type="checkbox" name="check" id="check" />
+              <input type="checkbox" name="check" id="check" required/>
               <label htmlFor="check">
                 Eu concordo em receber emails sobre coisas legais no Labeddit.
               </label>
             </s.InputCheck>
           </s.ContainerTermContract>
 
-          <s.BtnRegister type="button" value="Cadastar" />
+          <s.BtnRegister type="button" value="Cadastar" onClick={() => goToPosts(navigate)} />
         </s.Form>
       </s.ContainerForm>
     </s.Container>
