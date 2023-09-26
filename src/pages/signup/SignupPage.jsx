@@ -6,6 +6,7 @@ import { goToPosts } from "../../routes/coordinator";
 export function SignupPage() {
 
   const navigate = useNavigate()
+  
 
   return (
     <s.Container>
@@ -24,7 +25,7 @@ export function SignupPage() {
             </s.TextContract>
 
             <s.InputCheck>
-              <input type="checkbox" name="check" id="check" />
+              <input type="checkbox" name="check" id="check" required/>
               <label htmlFor="check">
                 Eu concordo em receber emails sobre coisas legais no Labeddit.
               </label>

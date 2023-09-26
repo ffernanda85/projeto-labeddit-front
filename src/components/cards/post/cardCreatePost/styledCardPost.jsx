@@ -11,7 +11,7 @@ gap: 0.8rem;
 
 hr {
   border: 1px solid #f9b24e;
-  margin: 1.2rem 0 2rem 0;
+  margin: 1rem 0;
 }
 `
 export const TextareaPost = styled.textarea`
