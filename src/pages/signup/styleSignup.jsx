@@ -38,8 +38,7 @@ export const InputText = styled.input`
 `
 export const TextContract = styled.p`
   
-  a {
-    text-decoration-line: none;
+  span {
     color: #4088CB;
   }
 `
@@ -54,7 +53,7 @@ export const InputCheck = styled.div`
   display: flex;
   gap: .8rem;
 `
-export const BtnRegister = styled.input`
+export const BtnRegister = styled.button`
   border: none;
   border-radius: 27px;
   padding: 13px 133px;
