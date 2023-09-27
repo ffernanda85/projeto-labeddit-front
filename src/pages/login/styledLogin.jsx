@@ -50,7 +50,7 @@ export const InputText = styled.input`
     height: 50px;
     padding-left: 17px;
 `
-export const BtnInput = styled.input`
+export const BtnInput = styled.button`
     background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
     padding: .8125rem 8.3125rem;
     border-radius: 27px;
