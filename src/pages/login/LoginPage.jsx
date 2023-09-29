@@ -1,10 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import * as s from "./styledLogin";
 import { goToPosts, goToSignup } from "../../routes/coordinator";
+import { useForm } from "../../hooks/useForm";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const [form, onChange, resetForm] = useForm({ email: "", password: "" });
 
-  const navigate = useNavigate()
+  const sendFormLogin = (e) => {
+    e.preventDefault();
+    resetForm();
+    goToPosts(navigate);
+  };
 
   return (
     <s.Container>
@@ -16,13 +23,31 @@ export const LoginPage = () => {
         <s.TextHeader>O projeto de rede social da Labenu</s.TextHeader>
       </s.HeaderLogin>
       <s.ContainerContent>
-        <s.Form action="#">
-          <s.InputText type="text" placeholder="E-mail" />
-          <s.InputText type="text" placeholder="Senha" />
-          <s.BtnInput type="button" value="Continuar" onClick={() => goToPosts(navigate)} />
+        <s.Form onSubmit={sendFormLogin}>
+          <s.InputText
+            type="email"
+            placeholder="E-mail"
+            name="email"
+            id="email"
+            onChange={onChange}
+            value={form.email}
+            required
+          />
+          <s.InputText
+            type="password"
+            placeholder="Senha"
+            name="password"
+            id="senha"
+            value={form.password}
+            onChange={onChange}
+            required
+          />
+          <s.BtnInput>Continuar</s.BtnInput>
           <hr />
         </s.Form>
-        <s.BtnToGoToSignup onClick={() => goToSignup(navigate) }>Crie uma conta!</s.BtnToGoToSignup>
+        <s.BtnToGoToSignup onClick={() => goToSignup(navigate)}>
+          Crie uma conta!
+        </s.BtnToGoToSignup>
       </s.ContainerContent>
     </s.Container>
   );

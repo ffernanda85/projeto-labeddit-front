@@ -1,19 +1,19 @@
-import { LoginPage } from "./pages/login/LoginPage";
-import { PostPage } from "./pages/post/PostPage";
-import { SignupPage } from "./pages/signup/SignupPage"
+import { GlobalContext } from "./context/GlobalContext";
+import { GlobalState } from "./context/GlobalState";
 import { Router } from "./routes/Router";
-
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "./styles";
 
 function App() {
+  const context = GlobalState();
 
   return (
-    <>
-      {/* <LoginPage/> */}
-      {/* <SignupPage/> */}
-      {/* <PostPage/> */}
-      <Router />
-    </>
-  )
+    <GlobalContext.Provider value={context}>
+      <ChakraProvider theme={theme}>
+        <Router />
+      </ChakraProvider>
+    </GlobalContext.Provider>
+  );
 }
 
 export default App;

@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-  width: 100%;
-`;
-export const ContainerLogo = styled.div`
+export const ContainerLogo = styled.header`
   display: flex;
   align-items: center;
   background-color: #ededed;
   width: 100%;
   height: 50px;
 `;
+export const ContainerLogoComments = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #ededed;
+  width: 100%;
+  height: 50px;
+`;
+export const ImgReturn = styled.img`
+  position: absolute;
+  left: 8%;
+`
 export const ImgLogo = styled.img`
   width: 28.02px;
   height: 28.64px;

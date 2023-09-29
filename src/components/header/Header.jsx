@@ -9,7 +9,6 @@ export const Header = () => {
     <>
       {/* Signup Page */}
       {window.location.href.includes("signup") && (
-        <s.Header>
           <s.ContainerLogo>
             <s.ImgLogo
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
@@ -17,12 +16,10 @@ export const Header = () => {
             />
             <s.SubTitle onClick={() => goToLogin(navigate)}>Entrar</s.SubTitle>
           </s.ContainerLogo>
-        </s.Header>
       )}
 
       {/* Post Page */}
       {window.location.href.includes("posts") && (
-        <s.Header>
           <s.ContainerLogo>
             <s.ImgLogo
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
@@ -30,14 +27,13 @@ export const Header = () => {
             />
             <s.SubTitle onClick={() => goToLogin(navigate)}>Logout</s.SubTitle>
           </s.ContainerLogo>
-        </s.Header>
       )}
 
       {/* Comment Page */}
       {window.location.href.includes("comments") && (
-        <s.Header>
-          <s.ContainerLogo>
-            <img
+        
+          <s.ContainerLogoComments>
+            <s.ImgReturn
               onClick={() => goToPosts(navigate)}
               src="https://uploaddeimagens.com.br/images/004/617/271/full/Group_2.png?1695500039"
               alt="X"
@@ -48,8 +44,8 @@ export const Header = () => {
               alt="logo-labeddit"
             />
             <s.SubTitle onClick={() => goToLogin(navigate)}>Logout</s.SubTitle>
-          </s.ContainerLogo>
-        </s.Header>
+          </s.ContainerLogoComments>
+        
       )}
     </>
   );
