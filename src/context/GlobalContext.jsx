@@ -1,12 +1,18 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from '../constants/constants';
-import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export const GlobalContext = createContext()
 
 export function GlobalState({ children }) {
     const [isLogged, setIsLogged] = useState(false)
+
+    //const Swal = require('sweetalert2')
+
+    function modal(title, text, icon) {
+        Swal.fire({ title, text, icon })
+    }
 
     async function user(body, page) {
         const PATH = page.includes("signup") ? BASE_URL + "/users/signup" : BASE_URL + "/users/login"
@@ -16,8 +22,11 @@ export function GlobalState({ children }) {
                 setIsLogged(true)
             })
             .catch(error => {
-                console.log(error)
-                //criar modal com sweetAlert
+                if (typeof error.response.data === 'string') {
+                    modal('Inválido', error.response.data, 'error')
+                } else {
+                    modal('Erro', error.response.data[0].message, 'error')
+                }
             })
     }
 
