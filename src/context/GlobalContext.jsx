@@ -1,14 +1,15 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from '../constants/constants';
+import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext()
 
 export function GlobalState({ children }) {
     const [isLogged, setIsLogged] = useState(false)
-    
-    async function userLogin(body) {
-        const PATH = BASE_URL + "/users/login"
+
+    async function user(body, page) {
+        const PATH = page.includes("signup") ? BASE_URL + "/users/signup" : BASE_URL + "/users/login"
         await axios.post(PATH, body)
             .then(response => {
                 setToken(response.data.token)
@@ -20,6 +21,12 @@ export function GlobalState({ children }) {
             })
     }
 
+    function getToken() {
+        return localStorage.getItem("token")
+    }
+    function removeToken() {
+        localStorage.removeItem("token")
+    }
     function setToken(token) {
         localStorage.setItem("token", token)
     }
@@ -28,7 +35,10 @@ export function GlobalState({ children }) {
     const context = {
         isLogged,
         setIsLogged,
-        userLogin
+        user,
+        setToken,
+        getToken,
+        removeToken
     }
 
     return (

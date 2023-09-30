@@ -3,14 +3,19 @@ import { Header } from "../../components/header/Header";
 import * as s from "./styleSignup";
 import { goToPosts } from "../../routes/coordinator";
 import { useForm } from "../../hooks/useForm";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export function SignupPage() {
-
   const navigate = useNavigate()
   const [form, onChange, resetForm] = useForm({ name: '', email: '', password: '' })
-  
-  function sendFormSignup(e) {
+
+  const context = useContext(GlobalContext)
+
+  async function sendFormSignup(e) {
     e.preventDefault()
+    const page = window.location.href
+    await context.user(form, page)
     resetForm()
     goToPosts(navigate)
   }

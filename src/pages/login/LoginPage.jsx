@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import * as s from "./styledLogin";
 import { goToPosts, goToSignup } from "../../routes/coordinator";
 import { useForm } from "../../hooks/useForm";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 
 export const LoginPage = () => {
@@ -11,13 +11,13 @@ export const LoginPage = () => {
 
   const context = useContext(GlobalContext)
 
-  const sendFormLogin = async(e) => {
+  async function sendFormLogin (e) {
     e.preventDefault();
-    await context.userLogin(form)
+    const page = window.location.href
+    await context.user(form, page)
     resetForm();
     goToPosts(navigate);
   };
-
   
   return (
     <s.Container>
