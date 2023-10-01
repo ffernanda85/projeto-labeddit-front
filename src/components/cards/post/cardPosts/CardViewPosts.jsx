@@ -6,8 +6,6 @@ export const CardViewPosts = ({ post }) => {
 
   const navigate = useNavigate()
 
-  console.log(post);
-
   return (
     <s.ContainerPost>
       <s.UserName>Enviado por: {post.creator.name}</s.UserName>

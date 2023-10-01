@@ -6,10 +6,19 @@ import * as s from "./stylePost";
 import axios from "axios";
 import { GlobalContext } from "../../context/GlobalContext";
 import { BASE_URL } from "../../constants/constants";
+import { useForm } from "../../../../hooks/useForm";
 
 export function PostPage() {
   const [posts, setPosts] = useState([]);
   const context = useContext(GlobalContext);
+  const [form, onChange, resetForm] = useForm({ content: '' })
+  
+  function sendPost(e) {
+    e.preventDefault()
+    
+    resetForm()
+  }
+
 
   async function showPosts() {
     const token = context.getToken();

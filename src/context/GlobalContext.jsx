@@ -7,8 +7,7 @@ export const GlobalContext = createContext()
 
 export function GlobalState({ children }) {
     const [isLogged, setIsLogged] = useState(false)
-
-    //const Swal = require('sweetalert2')
+    const [reload, setReload] = useState(false)
 
     function modal(title, text, icon) {
         Swal.fire({ title, text, icon })
@@ -30,6 +29,12 @@ export function GlobalState({ children }) {
             })
     }
 
+    async function createPostAPI(body) {
+        const PATH = BASE_URL + "/posts"
+
+        await
+    }
+
     function getToken() {
         return localStorage.getItem("token")
     }
@@ -47,7 +52,9 @@ export function GlobalState({ children }) {
         user,
         setToken,
         getToken,
-        removeToken
+        removeToken,
+        reload,
+        setReload
     }
 
     return (
