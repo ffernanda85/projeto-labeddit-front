@@ -15,18 +15,12 @@ export function PostPage() {
   
   async function sendPost(e) {
     e.preventDefault()
-    const token = context.getToken()
-    const headers = {headers:{Authorization:token}}
-    await context.createPostAPI(form, headers)
+    await context.createPostAPI(form)
     resetForm()
   }
 
-
   async function showPosts() {
-    const token = context.getToken();
-    const PATH = BASE_URL + "/posts";
-    const headers = { headers: { Authorization: token } };
-    const result = await axios.get(PATH, headers);
+    const result = await context.getPosts();
     setPosts(result.data);
   }
 

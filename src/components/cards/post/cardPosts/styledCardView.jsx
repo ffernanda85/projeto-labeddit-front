@@ -12,25 +12,23 @@ export const ContainerPost = styled.div`
   background-color: #ededed;
 `;
 export const UserName = styled.p`
-  color: #6F6F6F;
-  font-size: .75rem;
+  color: #6f6f6f;
+  font-size: 0.75rem;
 `;
 
-export const ContentPost = styled.p`
-  
-`
+export const ContentPost = styled.p``;
 export const ContainerLikeDislikeComments = styled.div`
   display: flex;
   gap: 1rem;
-`
+`;
 export const LikeDislike = styled.div`
-  border: .8px solid #6F6F6F;
+  border: 0.8px solid #6f6f6f;
   border-radius: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .29rem;
-  color: #6F6F6F;
+  padding: 0 0.29rem;
+  color: #6f6f6f;
   width: 98px;
   height: 27.89px;
 
@@ -38,21 +36,25 @@ export const LikeDislike = styled.div`
     font-weight: 700;
     font-size: 0.5975rem;
   }
-
-  img {
-    width: 19.72px;
-    height: 19.72px;
-    cursor: pointer;
-  }
-`
+`;
+export const Like = styled.img`
+  width: 19.72px;
+  height: 19.72px;
+  cursor: pointer;
+`;
+export const Dislike = styled.img`
+  width: 19.72px;
+  height: 19.72px;
+  cursor: pointer;
+`;
 export const Comments = styled.div`
-  border: .8px solid #6F6F6F;
+  border: 0.8px solid #6f6f6f;
   border-radius: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .5rem;
-  color: #6F6F6F;
+  padding: 0 0.5rem;
+  color: #6f6f6f;
   width: 65.33px;
   height: 27.89px;
 
@@ -65,4 +67,4 @@ export const Comments = styled.div`
     width: 19.72px;
     height: 19.72px;
   }
-`
+`;
