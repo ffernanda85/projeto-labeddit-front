@@ -2,20 +2,22 @@ import { useContext, useEffect, useState } from "react";
 import { CardCreatePost } from "../../components/cards/post/cardCreatePost/CardCreatePost";
 import { CardViewPosts } from "../../components/cards/post/cardPosts/CardViewPosts";
 import { Header } from "../../components/header/Header";
-import * as s from "./stylePost";
 import axios from "axios";
 import { GlobalContext } from "../../context/GlobalContext";
 import { BASE_URL } from "../../constants/constants";
-import { useForm } from "../../../../hooks/useForm";
+import { useForm } from "../../hooks/useForm";
+import * as s from "./stylePost";
 
 export function PostPage() {
   const [posts, setPosts] = useState([]);
-  const context = useContext(GlobalContext);
   const [form, onChange, resetForm] = useForm({ content: '' })
+  const context = useContext(GlobalContext);
   
-  function sendPost(e) {
+  async function sendPost(e) {
     e.preventDefault()
-    
+    const token = context.getToken()
+    const headers = {headers:{Authorization:token}}
+    await context.createPostAPI(form, headers)
     resetForm()
   }
 
@@ -30,12 +32,12 @@ export function PostPage() {
 
   useEffect(() => {
     showPosts();
-  }, []);
+  }, [context.reload, context]);
 
   return (
     <s.Container>
       <Header />
-      <CardCreatePost />
+      <CardCreatePost sendPost={sendPost} onChange={onChange} form={form} />
       {
         posts?.map((post) =>
           <CardViewPosts key={post.id} post={post} />

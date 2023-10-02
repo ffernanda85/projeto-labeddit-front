@@ -29,10 +29,15 @@ export function GlobalState({ children }) {
             })
     }
 
-    async function createPostAPI(body) {
-        const PATH = BASE_URL + "/posts"
-
-        await
+    async function createPostAPI(body, headers) {
+        try {
+            const PATH = BASE_URL + "/posts"
+            await axios.post(PATH, body, headers)
+            setIsLogged(true)
+            setReload(!reload)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     function getToken() {
@@ -45,7 +50,6 @@ export function GlobalState({ children }) {
         localStorage.setItem("token", token)
     }
 
-
     const context = {
         isLogged,
         setIsLogged,
@@ -54,7 +58,8 @@ export function GlobalState({ children }) {
         getToken,
         removeToken,
         reload,
-        setReload
+        setReload,
+        createPostAPI
     }
 
     return (

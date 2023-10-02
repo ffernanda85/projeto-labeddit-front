@@ -34,4 +34,5 @@ export const BtnPost = styled.button`
   font-weight: 700;
   color: #fff;
   background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
+  cursor: pointer;
 `

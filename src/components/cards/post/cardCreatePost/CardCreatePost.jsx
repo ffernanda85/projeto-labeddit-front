@@ -1,9 +1,9 @@
 import * as s from "./styledCardPost";
 
-export const CardCreatePost = () => {
+export const CardCreatePost = ({ sendPost, onChange, form }) => {
   
   return (
-    <s.FormPost action="#">
+    <s.FormPost onSubmit={sendPost}>
       <s.ContainerMessagePost>
         <s.TextareaPost
           name="content"
