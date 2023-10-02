@@ -72,9 +72,13 @@ export function GlobalState({ children }) {
     }
   }
 
-  function logout(navigate) {
-    removeToken();
-    goToLogin(navigate);
+  function logout(navigate, page) {
+    if (page.includes("signup")) {
+      removeToken();
+    } else {
+      removeToken();
+      goToLogin(navigate);
+    }
   }
 
   function getToken() {

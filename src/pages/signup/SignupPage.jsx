@@ -15,6 +15,7 @@ export function SignupPage() {
   async function sendFormSignup(e) {
     e.preventDefault()
     const page = window.location.href
+    if (context.getToken()) context.logout(navigate, page)
     await context.user(form, page)
     resetForm()
     goToPosts(navigate)
