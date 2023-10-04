@@ -2,19 +2,40 @@ import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from "../constants/constants";
 import Swal from "sweetalert2";
-import { goToLogin, goToPosts } from "../routes/coordinator";
+import { goToComments, goToLogin, goToPosts } from "../routes/coordinator";
 
 export const GlobalContext = createContext();
 
 export function GlobalState({ children }) {
   const [isLogged, setIsLogged] = useState(false);
   const [reload, setReload] = useState(false);
+  const [postSelected, setPostSelected] = useState();
 
   const headers = {
     headers: {
       Authorization: getToken(),
     },
   };
+
+  async function getComments(postId) {
+    try {
+      const PATH = BASE_URL + "/comments/" + postId
+      const result = await axios.get(PATH, headers)
+      return result
+    } catch (error) {
+      console.log(error)      
+    }
+  }
+
+  // const getPostById = async (postId) => {
+  //   try {
+  //     const PATH = BASE_URL + "/posts/" + postId
+  //     const result = await axios.get(PATH, headers)
+  //     return result
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   function modal(title, text, icon) {
     Swal.fire({ title, text, icon });
@@ -104,6 +125,10 @@ export function GlobalState({ children }) {
     logout,
     getPosts,
     likeDislikePost,
+    getComments,
+    // getPostById,
+    postSelected,
+    setPostSelected
   };
 
   return (

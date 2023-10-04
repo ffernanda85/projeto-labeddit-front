@@ -29,7 +29,7 @@ export function Router() {
           }
         />
         <Route
-          path="/comments"
+          path="/comments/:postId"
           element={
             <ProtectedRouter redirect={"/"}>
               <CommentPage />

@@ -37,15 +37,15 @@ export const LikeDislike = styled.div`
     font-size: 0.5975rem;
   }
 `;
-export const Like = styled.img`
+export const Like = styled.button`
   width: 19.72px;
   height: 19.72px;
+  border: none;
+  background-image: url(${({status}) => status === 'up' ? "/like_dislike/up.svg" : "/like_dislike/like.svg"});
   cursor: pointer;
 `;
-export const Dislike = styled.img`
-  width: 19.72px;
-  height: 19.72px;
-  cursor: pointer;
+export const Dislike = styled(Like)`
+  background-image: url(${({status}) => status === 'down' ? "/like_dislike/down.svg" : "/like_dislike/dislike.svg"});
 `;
 export const Comments = styled.div`
   border: 0.8px solid #6f6f6f;
@@ -57,14 +57,15 @@ export const Comments = styled.div`
   color: #6f6f6f;
   width: 65.33px;
   height: 27.89px;
+  cursor: pointer;
 
   p {
     font-weight: 700;
     font-size: 0.5975rem;
   }
-
-  img {
+`;
+export const CommentBtn = styled.img`
     width: 19.72px;
     height: 19.72px;
-  }
-`;
+    cursor: pointer;
+`
