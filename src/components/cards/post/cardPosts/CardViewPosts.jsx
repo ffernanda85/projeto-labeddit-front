@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as s from "./styledCardView";
 import { goToComments } from "../../../../routes/coordinator";
 import { useContext } from "react";
@@ -20,7 +20,7 @@ export const CardViewPosts = ({ post }) => {
           <s.Like 
             onClick={async () => await context.likeDislikePost(true, post.id)}
           >
-            <img src={post.liked === "like" ? "/like_dislike/up.svg" : "/like_dislike/like.svg"} alt="like" />
+            <img src={post.liked === "like" ? "/like_dislike/up.png" : "/like_dislike/like.png"} alt="like" />
           </s.Like>
 
           <p>{post.likes - post.dislikes}</p>
@@ -28,7 +28,7 @@ export const CardViewPosts = ({ post }) => {
           <s.Dislike
             onClick={ async () => await context.likeDislikePost(false, post.id)}
           >
-             <img src={post.liked === "dislike" ? "/like_dislike/down.svg" : "/like_dislike/dislike.svg"} alt="dislike" />
+             <img src={post.liked === "dislike" ? "/like_dislike/down.png" : "/like_dislike/dislike.png"} alt="dislike" />
           </s.Dislike>
         </s.LikeDislike>
 

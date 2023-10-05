@@ -18,6 +18,10 @@ export const ImgReturn = styled.img`
   position: absolute;
   left: 8%;
   cursor: pointer;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 `
 export const ImgLogo = styled.img`
   width: 28.02px;
@@ -33,4 +37,8 @@ export const SubTitle = styled.p`
   position: absolute;
   right: 5%;
   cursor: pointer;
+
+  &:hover{
+    transform: scale(1.08);
+  }
 `;

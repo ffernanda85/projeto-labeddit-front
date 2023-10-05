@@ -2,7 +2,7 @@ import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from "../constants/constants";
 import Swal from "sweetalert2";
-import { goToComments, goToLogin, goToPosts } from "../routes/coordinator";
+import { goToLogin } from "../routes/coordinator";
 
 export const GlobalContext = createContext();
 
@@ -47,16 +47,6 @@ export function GlobalState({ children }) {
       console.log(error)
     }
   }
-
-  // const getPostById = async (postId) => {
-  //   try {
-  //     const PATH = BASE_URL + "/posts/" + postId
-  //     const result = await axios.get(PATH, headers)
-  //     return result
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   function modal(title, text, icon) {
     Swal.fire({ title, text, icon });

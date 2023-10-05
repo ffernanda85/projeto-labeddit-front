@@ -27,7 +27,7 @@ export const LikeDislike = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.29rem;
+  padding: 0 0.5rem;
   color: #6f6f6f;
   width: 98px;
   height: 27.89px;
@@ -42,10 +42,18 @@ export const Like = styled.button`
   height: 19.72px;
   border: none;
   cursor: pointer;
+  background: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 19.72px;
+    height: 19px;
+  }
 `;
-export const Dislike = styled(Like)`
- 
-`;
+export const Dislike = styled(Like)``;
 export const Comments = styled.div`
   border: 0.8px solid #6f6f6f;
   border-radius: 28px;
@@ -62,9 +70,13 @@ export const Comments = styled.div`
     font-weight: 700;
     font-size: 0.5975rem;
   }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 export const CommentBtn = styled.img`
-    width: 19.72px;
-    height: 19.72px;
-    cursor: pointer;
-`
+  width: 19.72px;
+  height: 19.72px;
+  cursor: pointer;
+`;
