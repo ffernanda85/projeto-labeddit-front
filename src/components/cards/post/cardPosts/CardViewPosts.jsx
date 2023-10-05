@@ -8,8 +8,7 @@ import { GlobalContext } from "../../../../context/GlobalContext";
 export const CardViewPosts = ({ post }) => {
   const context = useContext(GlobalContext);
   const navigate = useNavigate();
-  let status = 'base'
-  
+    
   return (
     <s.ContainerPost>
       <s.UserName>Enviado por: {post.creator.name}</s.UserName>
@@ -20,13 +19,17 @@ export const CardViewPosts = ({ post }) => {
         <s.LikeDislike>
           <s.Like 
             onClick={async () => await context.likeDislikePost(true, post.id)}
-          ></s.Like>
+          >
+            <img src={post.liked === "like" ? "/like_dislike/up.svg" : "/like_dislike/like.svg"} alt="like" />
+          </s.Like>
 
           <p>{post.likes - post.dislikes}</p>
 
           <s.Dislike
             onClick={ async () => await context.likeDislikePost(false, post.id)}
-          ></s.Dislike>
+          >
+             <img src={post.liked === "dislike" ? "/like_dislike/down.svg" : "/like_dislike/dislike.svg"} alt="dislike" />
+          </s.Dislike>
         </s.LikeDislike>
 
         <s.Comments onClick={() => {

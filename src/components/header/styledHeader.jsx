@@ -17,6 +17,7 @@ export const ContainerLogoComments = styled.div`
 export const ImgReturn = styled.img`
   position: absolute;
   left: 8%;
+  cursor: pointer;
 `
 export const ImgLogo = styled.img`
   width: 28.02px;

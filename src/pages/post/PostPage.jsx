@@ -13,6 +13,10 @@ export function PostPage() {
   const [form, onChange, resetForm] = useForm({ content: '' })
   const context = useContext(GlobalContext);
   
+  useEffect(() => {
+    showPosts();
+  }, [context.reload, context]);
+
   async function sendPost(e) {
     e.preventDefault()
     await context.createPostAPI(form)
@@ -24,10 +28,8 @@ export function PostPage() {
     setPosts(result.data);
   }
 
-  useEffect(() => {
-    showPosts();
-  }, [context.reload, context]);
-
+  console.log(posts);
+  
   return (
     <s.Container>
       <Header />

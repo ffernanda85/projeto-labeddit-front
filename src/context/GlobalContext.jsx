@@ -69,6 +69,7 @@ export function GlobalState({ children }) {
     await axios
       .post(PATH, body)
       .then((response) => {
+        removeToken()
         setToken(response.data.token);
         setIsLogged(true);
       })
