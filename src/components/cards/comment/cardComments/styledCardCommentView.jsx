@@ -33,10 +33,14 @@ export const LikeDislike = styled.div`
     font-weight: 700;
     font-size: 0.5975rem;
   }
-
-  img {
+`
+export const Like = styled.img`
     width: 19.72px;
     height: 19.72px;
     cursor: pointer;
-  }
+`
+export const Dislike = styled.img`
+    width: 19.72px;
+    height: 19.72px;
+    cursor: pointer;
 `

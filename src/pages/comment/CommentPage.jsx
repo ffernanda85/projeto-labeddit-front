@@ -23,7 +23,7 @@ export function CommentPage() {
   useEffect(() => {
     // loadPost()
     showComments();
-  }, []);
+  }, [context.reload, context]);
   
   /* const loadPost = async () => {
     const result = await context.getPostById(postId)
@@ -44,7 +44,7 @@ export function CommentPage() {
     <s.Container>
       <Header />
       <CardViewPosts post={context.postSelected} />
-      <CardCreateComment />
+      <CardCreateComment postId={ postId } />
       {comments.map((comment) => (
         <CardViewComments key={comment.id} comment={comment} />
       ))}

@@ -12,7 +12,7 @@ export const CardViewPosts = ({ post }) => {
   
   return (
     <s.ContainerPost>
-      <s.UserName>Enviado por: {post.creator?.name}</s.UserName>
+      <s.UserName>Enviado por: {post.creator.name}</s.UserName>
 
       <s.ContentPost>{post.content}</s.ContentPost>
 

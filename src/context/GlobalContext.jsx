@@ -27,6 +27,27 @@ export function GlobalState({ children }) {
     }
   }
 
+  const createComment = async (postId, body) => {
+    try {
+      const PATH = BASE_URL + "/comments/" + postId
+      await axios.post(PATH, body, headers)
+      setReload(!reload)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const likeDislikeComment = async (commentId, like) => {
+    try {
+      const PATH = BASE_URL + "/comments/" + commentId + "/like"
+      await axios.put(PATH, {like}, headers)
+      setIsLogged(true)
+      setReload(!reload)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   // const getPostById = async (postId) => {
   //   try {
   //     const PATH = BASE_URL + "/posts/" + postId
@@ -128,7 +149,9 @@ export function GlobalState({ children }) {
     getComments,
     // getPostById,
     postSelected,
-    setPostSelected
+    setPostSelected,
+    createComment,
+    likeDislikeComment
   };
 
   return (
