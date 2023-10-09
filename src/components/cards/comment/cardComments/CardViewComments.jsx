@@ -19,8 +19,8 @@ export const CardViewComments = ({ comment }) => {
           <img
             src={
               comment.liked === "like"
-                ? "/like_dislike/up.svg"
-                : "/like_dislike/like.svg"
+                ? "/like_dislike/up.png"
+                : "/like_dislike/like.png"
             }
             alt="like"
           />
@@ -37,8 +37,8 @@ export const CardViewComments = ({ comment }) => {
           <img
             src={
               comment.liked === "dislike"
-                ? "/like_dislike/down.svg"
-                : "/like_dislike/dislike.svg"
+                ? "/like_dislike/down.png"
+                : "/like_dislike/dislike.png"
             }
             alt="dislike"
           />

@@ -24,7 +24,7 @@ export const LikeDislike = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.29rem;
+  padding: 0 0.5rem;
   color: #6f6f6f;
   width: 98px;
   height: 27.89px;
@@ -39,10 +39,15 @@ export const Like = styled.button`
   height: 19.72px;
   cursor: pointer;
   border: none;
+  background: transparent;
 
   &:hover {
-    transform: scale(1.2);
-    background: transparent;
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 19.72px;
+    height: 19px;
   }
 `;
 export const Dislike = styled(Like)``;
