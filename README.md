@@ -37,12 +37,12 @@ O projeto Labeddit frontend, foi criado utilizando o React com o vite, é um sit
 
 <img src="https://uploaddeimagens.com.br/images/004/632/207/full/signup.png?1696870416" width="220px">
 
-## 2.3 Página Postagens
+## 2.3 Página de Postagens
 <br>
 
 <img src="https://uploaddeimagens.com.br/images/004/632/206/full/posts.png?1696870393" width="220px">
 
-## 2.4 Página Comentários
+## 2.4 Página de Comentários
 <br>
 
 <img src="https://uploaddeimagens.com.br/images/004/632/198/full/comments.png?1696870231" width="220px">
