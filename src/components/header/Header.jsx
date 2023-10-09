@@ -19,7 +19,7 @@ export const Header = () => {
               alt="logo-labeddit"
             />
           <s.SubTitle onClick={() => {
-            context.logout(navigate, page)
+            context.removeToken()
             goToLogin(navigate)
           }}>Entrar</s.SubTitle>
           </s.ContainerLogo>
@@ -32,7 +32,10 @@ export const Header = () => {
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
               alt="logo-labeddit"
             />
-            <s.SubTitle onClick={() => context.logout(navigate, page)}>Logout</s.SubTitle>
+          <s.SubTitle onClick={() => {
+            context.removeToken()
+            goToLogin(navigate)
+          }}>Logout</s.SubTitle>
           </s.ContainerLogo>
       )}
 
@@ -50,7 +53,10 @@ export const Header = () => {
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
               alt="logo-labeddit"
             />
-            <s.SubTitle onClick={() => context.logout(navigate, page)}>Logout</s.SubTitle>
+            <s.SubTitle onClick={() => {
+            context.removeToken()
+            goToLogin(navigate)
+          }}>Logout</s.SubTitle>
           </s.ContainerLogoComments>
         
       )}
