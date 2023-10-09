@@ -15,12 +15,14 @@
     "@emotion/styled": "^11.11.0",
     "@iconify/react": "^4.1.1",
     "@stitches/react": "^1.2.8",
+    "axios": "^1.5.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native-linear-gradient": "^2.8.3",
     "react-router-dom": "^6.16.0",
-    "styled-components": "^6.0.8"
+    "styled-components": "^6.0.8",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

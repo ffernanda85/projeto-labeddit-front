@@ -61,6 +61,11 @@ export const BtnInput = styled.button`
     font-size: 1.125rem;
     margin-top: 2.5rem;
     cursor: pointer;
+
+    &:hover{
+        background: linear-gradient(90deg, #FF6489 0%, #F9B24E 50%);
+        transform: scale(1.03);
+    }
 `
 export const BtnToGoToSignup = styled.button`
     font-family: 'Noto Sans', sans-serif;
@@ -73,4 +78,11 @@ export const BtnToGoToSignup = styled.button`
     color: #FE7E02;
     background-color: #fff;
     cursor: pointer;
+
+     &:hover{
+        background: linear-gradient(90deg, #FF6489 0%, #F9B24E 50%);
+        border: none;
+        color: #fff;
+        transform: scale(1.03);
+    }
 `

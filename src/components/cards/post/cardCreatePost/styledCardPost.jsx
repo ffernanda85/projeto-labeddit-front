@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 export const FormPost = styled.form`
   width: 85%;
-`
+`;
 export const ContainerMessagePost = styled.section`
-width: 100%;
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 
-hr {
-  border: 1px solid #f9b24e;
-  margin: 1rem 0;
-}
-`
+  hr {
+    border: 1px solid #f9b24e;
+    margin: 1rem 0;
+  }
+`;
 export const TextareaPost = styled.textarea`
   border: none;
   border-radius: 12px;
@@ -24,7 +24,7 @@ export const TextareaPost = styled.textarea`
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
-`
+`;
 export const BtnPost = styled.button`
   border: none;
   border-radius: 12px;
@@ -34,4 +34,10 @@ export const BtnPost = styled.button`
   font-weight: 700;
   color: #fff;
   background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
-`
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 50%);
+    transform: scale(1.03);
+  }
+`;

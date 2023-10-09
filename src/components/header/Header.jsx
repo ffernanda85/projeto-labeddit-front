@@ -1,36 +1,43 @@
 import { useNavigate } from "react-router-dom";
 import * as s from "./styledHeader";
 import { goToLogin, goToPosts } from "../../routes/coordinator";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const context = useContext(GlobalContext)
+  const page = window.location.href
 
   return (
     <>
       {/* Signup Page */}
-      {window.location.href.includes("signup") && (
+      {page.includes("signup") && (
           <s.ContainerLogo>
             <s.ImgLogo
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
               alt="logo-labeddit"
             />
-            <s.SubTitle onClick={() => goToLogin(navigate)}>Entrar</s.SubTitle>
+          <s.SubTitle onClick={() => {
+            context.logout(navigate, page)
+            goToLogin(navigate)
+          }}>Entrar</s.SubTitle>
           </s.ContainerLogo>
       )}
 
       {/* Post Page */}
-      {window.location.href.includes("posts") && (
+      {page.includes("posts") && (
           <s.ContainerLogo>
             <s.ImgLogo
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
               alt="logo-labeddit"
             />
-            <s.SubTitle onClick={() => goToLogin(navigate)}>Logout</s.SubTitle>
+            <s.SubTitle onClick={() => context.logout(navigate, page)}>Logout</s.SubTitle>
           </s.ContainerLogo>
       )}
 
       {/* Comment Page */}
-      {window.location.href.includes("comments") && (
+      {page.includes("comments") && (
         
           <s.ContainerLogoComments>
             <s.ImgReturn
@@ -43,7 +50,7 @@ export const Header = () => {
               src="https://uploaddeimagens.com.br/images/004/613/727/full/Group_3_%281%29.png?1695155531"
               alt="logo-labeddit"
             />
-            <s.SubTitle onClick={() => goToLogin(navigate)}>Logout</s.SubTitle>
+            <s.SubTitle onClick={() => context.logout(navigate, page)}>Logout</s.SubTitle>
           </s.ContainerLogoComments>
         
       )}

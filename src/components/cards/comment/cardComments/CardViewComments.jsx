@@ -1,24 +1,48 @@
+import { useContext } from "react";
 import * as s from "./styledCardCommentView";
+import { GlobalContext } from "../../../../context/GlobalContext";
 
-export const CardViewComments = () => {
+export const CardViewComments = ({ comment }) => {
+  const context = useContext(GlobalContext);
+
   return (
     <s.ContainerComment>
-      <s.UserName>Enviado por: creator_id</s.UserName>
+      <s.UserName>Enviado por: {comment.creator.name}</s.UserName>
 
-      <s.ContentComment>
-        Não posso falar por todos, mas usar Linux ajudou meu pc a ter uma
-        performance melhor e evitou que eu precisasse comprar um novo.
-      </s.ContentComment>
+      <s.ContentComment>{comment.content}</s.ContentComment>
       <s.LikeDislike>
-        <img
-          src="https://uploaddeimagens.com.br/images/004/619/369/full/Vector.png?1695754080"
-          alt="like"
-        />
-        <p>1.2k</p>
-        <img
+        <s.Like
+          onClick={async () =>
+            await context.likeDislikeComment(comment.id, true)
+          }
+        >
+          <img
+            src={
+              comment.liked === "like"
+                ? "/like_dislike/up.svg"
+                : "/like_dislike/like.svg"
+            }
+            alt="like"
+          />
+        </s.Like>
+        <p>{comment.likes - comment.dislikes}</p>
+
+        <s.Dislike
+          onClick={async () =>
+            await context.likeDislikeComment(comment.id, false)
+          }
           src="https://uploaddeimagens.com.br/images/004/619/365/full/Vector_%281%29.png?1695754034"
           alt="dislike"
-        />
+        >
+          <img
+            src={
+              comment.liked === "dislike"
+                ? "/like_dislike/down.svg"
+                : "/like_dislike/dislike.svg"
+            }
+            alt="dislike"
+          />
+        </s.Dislike>
       </s.LikeDislike>
     </s.ContainerComment>
   );

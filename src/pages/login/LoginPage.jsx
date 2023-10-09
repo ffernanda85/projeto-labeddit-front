@@ -2,17 +2,23 @@ import { useNavigate } from "react-router-dom";
 import * as s from "./styledLogin";
 import { goToPosts, goToSignup } from "../../routes/coordinator";
 import { useForm } from "../../hooks/useForm";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
   const [form, onChange, resetForm] = useForm({ email: "", password: "" });
 
-  const sendFormLogin = (e) => {
+  const context = useContext(GlobalContext)
+
+  async function sendFormLogin (e) {
     e.preventDefault();
+    const page = window.location.href
+    await context.user(form, page)
     resetForm();
     goToPosts(navigate);
   };
-
+  
   return (
     <s.Container>
       <s.HeaderLogin>
