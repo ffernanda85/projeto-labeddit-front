@@ -11,6 +11,7 @@ O Labeddit se comporta como uma rede social. Seu objetivo é de promover a conex
 - <a href="#descricao">Descrição</a>
 - <a href="#layout">Layout</a>
 - <a href="#tecnologias">Tecnologias Utilizadas</a>
+- <a href="#link-deploy">Demonstração</a>
 - <a href="#como-rodar">Como Rodar o Projeto</a>
 - <a href="#link-back">Link do Back-End</a>
 - <a href="#pessoas-autoras">Pessoas Autoras</a>
@@ -69,28 +70,34 @@ O projeto Labeddit frontend, foi criado utilizando o React com o vite, é um sit
 
 
 <br>
+<span id="link-deploy"></span>
+
+## 4. 🎥 Demonstração
+- <a href="https://labeddit-flavia-fernanda.surge.sh/" target='_blank'>Link Deploy Front</a>
+
+<br>
 <span id="como-rodar"></span>
 
-## 4. 🎥 Como Rodar o Projeto
+## 5. 🎥 Como Rodar o Projeto
 
 <p>Se desejar baixar e instalar esse projeto na sua máquina, você precisa ter o git instalado.</p>
 
 - [Git](https://git-scm.com/downloads)
 <br>
 
-### 4.1 - Clonando Repositório
+### 5.1 - Clonando Repositório
 ```bash
 # Clone este repositório
 $ git clone <https://github.com/ffernanda85/projeto-labeddit-front.git>
 ```
-### 4.2 - Instalando as Dependências
+### 5.2 - Instalando as Dependências
 ```bash
 # Instale as dependências
 $ npm install
 // ou
 $ yarn install
 ```
-### 4.3 - Executando a Aplicação
+### 5.3 - Executando a Aplicação
 ```bash
 $ npm run dev
 // ou
@@ -101,7 +108,7 @@ $ npm run start
 <br>
 <span id="link-back"></span>
 
-## 5. 🎥 Link Back-End (API)
+## 6. 🎥 Link Back-End (API)
 
 - <a href="https://github.com/ffernanda85/projeto-labeddit-backend" target='_blank'>Link Repositório Back-End</a>
 - <a href="https://projeto-labeddit-backend-olcm.onrender.com" target='_blank'>Link Deploy Back-End (Render)</a>
